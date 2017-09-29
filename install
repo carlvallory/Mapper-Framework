@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+error_reporting(0);
+ini_set('display_errors', 0);
+require('_app/lib/functions.lib.php');
+if($argv[1]=='uninstall'):
+	uninstall();
+else:
+	autoConfig($argv[1]);
+	require_once('_app/init.php');
+	Mapper::run();
+endif;
+?>
